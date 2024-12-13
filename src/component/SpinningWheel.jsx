@@ -1,5 +1,6 @@
 import React from "react";
 import { Roulette, useRoulette } from "react-hook-roulette";
+import { Link } from "react-router-dom";
 
 const resultOption = {
   1: "Oops You Missed",
@@ -52,11 +53,17 @@ const SpinningWheel = () => {
       </div>
 
       <p className="text-xl font-bold text-gray-800">
-       
+
         <span className="text-blue-600">
           {resultOption[result] || "Spin the wheel to see your result!"}
         </span>
       </p>
+
+      <Link to="/quiz" className="mt-6 text-center">
+        <p className="text-xl font-semibold mt-6 w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600 p-2">
+          Play Quiz Game
+        </p>
+      </Link>
     </div>
   );
 };
