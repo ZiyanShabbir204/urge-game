@@ -1,16 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
 import './App.css'
 import SpinningWheel from './component/SpinningWheel'
+import Quiz from './component/Quiz'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-    <SpinningWheel/>
-  
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<SpinningWheel />}>
+
+          </Route>
+          <Route exact path="/quiz" element={<Quiz />}>
+
+          </Route>
+        </Routes>
+
+      </BrowserRouter>
+
     </>
   )
 }
