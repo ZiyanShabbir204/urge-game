@@ -31,7 +31,7 @@
     grid-template-columns: repeat(3, 1fr);
 }
 
-.quiz-container button {
+/* .quiz-container button {
     display: block;
     width: 100%;
     padding: 10px;
@@ -42,17 +42,17 @@
     color: #333;
     cursor: pointer;
     transition: all 0.3s ease;
-}
+} */
 
-.quiz-container button:hover {
+/* .quiz-container button:hover {
     background-color: #d1d1d1;
-}
+} */
 
 .quiz-container .submit-btn {
     margin-top: 20px;
     padding: 12px;
     font-size: 16px;
-    background-color: #007BFF;
+    background-color: #007BFF; 
     color: white;
     text-align: center;
     border: none;

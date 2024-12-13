@@ -1,5 +1,36 @@
 import React, { useState } from 'react';
 import "./quiz.css"
+import img1 from "../assets/q1/1.jpg"
+import img2 from "../assets/q1/2.jpg"
+import img3 from "../assets/q1/3.jpg"
+import img4 from "../assets/q1/4.jpg"
+import img5 from "../assets/q1/5.jpg"
+import img6 from "../assets/q1/6.jpg"
+import img7 from "../assets/q1/7.jpg"
+import img8 from "../assets/q1/8.jpg"
+import img9 from "../assets/q1/9.jpg"
+
+import img10 from "../assets/q2/1.jpg"
+import img11 from "../assets/q2/2.jpg"
+import img12 from "../assets/q2/3.jpg"
+import img13 from "../assets/q2/4.jpg"
+import img14 from "../assets/q2/5.jpg"
+import img15 from "../assets/q2/6.jpg"
+import img16 from "../assets/q2/7.jpg"
+import img17 from "../assets/q2/8.jpg"
+import img18 from "../assets/q2/9.jpg"
+
+import img19 from "../assets/q3/1.jpg"
+import img20 from "../assets/q3/2.jpg"
+import img21 from "../assets/q3/3.jpg"
+import img22 from "../assets/q3/4.jpg"
+import img23 from "../assets/q3/5.jpg"
+import img24 from "../assets/q3/6.jpg"
+import img25 from "../assets/q3/7.jpg"
+import img26 from "../assets/q3/8.jpg"
+import img27 from "../assets/q3/9.jpg"
+
+
 const Quiz = () => {
     const [answers, setAnswers] = useState({
         question1: null,
@@ -22,7 +53,7 @@ const Quiz = () => {
         RoyalDale: 0,
         Victory: 0,
         Speed: 0,
-        BasicInstinct:0
+        BasicInstinct: 0
     };
 
     const handleAnswerChange = (question, answer) => {
@@ -83,24 +114,39 @@ const Quiz = () => {
             {/* Question 1 */}
             {answers.question1 === null && (
                 <div className="mb-16">
-                    <p className="text-lg mb-2">How do you usually spend your weekends?</p>
+                    <h1 className="text-lg font-bold mb-2">How do you usually spend your weekends?</h1>
                     <div className="grid grid-cols-3 gap-5">
-                        {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','I'].map(option => (
-                            <button
-                                key={option}
-                                className="block w-full bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"
-                                onClick={() => handleAnswerChange('question1', option)}
-                            >
-                                {option === 'A' && 'Working on your goals'}
-                                {option === 'B' && 'Spending quality time with loved ones'}
-                                {option === 'C' && 'Going on outdoor adventures'}
-                                {option === 'D' && 'Exploring hidden areas in the city'}
-                                {option === 'E' && 'Indulging in luxurious self-care'}
-                                {option === 'F' && 'Hosting sophisticated dinner parties'}
-                                {option === 'G' && 'Celebrating personal victories'}
-                                {option === 'H' && 'Playing sports or hitting the gym'}
-                                {option === 'I' && 'Doing hardcore gym'}
-                            </button>
+                        {[
+                            { char: 'A', img: img1 },
+                            { char: 'B', img: img2 },
+                            { char: 'C', img: img3 },
+                            { char: 'D', img: img4 },
+                            { char: 'E', img: img5 },
+                            { char: 'F', img: img6 },
+                            { char: 'G', img: img7 },
+                            { char: 'H', img: img8 },
+                            { char: 'I', img: img9 },
+
+                            // 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','I'
+                        ].map(option => (
+                            <div>
+                                <img src={option.img} alt="" className='' srcset="" onClick={() => handleAnswerChange('question1', option.char)} />
+                                <button
+                                    key={option.char}
+                                    className="block w-full bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"
+                                    onClick={() => handleAnswerChange('question1', option.char)}
+                                >
+                                    {option.char === 'A' && 'Working on your goals'}
+                                    {option.char === 'B' && 'Spending quality time with loved ones'}
+                                    {option.char === 'C' && 'Going on outdoor adventures'}
+                                    {option.char === 'D' && 'Exploring hidden areas in the city'}
+                                    {option.char === 'E' && 'Indulging in luxurious self-care'}
+                                    {option.char === 'F' && 'Hosting sophisticated dinner parties'}
+                                    {option.char === 'G' && 'Celebrating personal victories'}
+                                    {option.char === 'H' && 'Playing sports or hitting the gym'}
+                                    {option.char === 'I' && 'Doing hardcore gym'}
+                                </button>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -109,24 +155,36 @@ const Quiz = () => {
             {/* Repeat for the next questions */}
             {answers.question2 === null && (
                 <div className="mb-16">
-                    <p className="text-lg mb-2">Which setting inspires you the most?</p>
+                    <h1 className="text-lg mb-2">Which setting inspires you the most?</h1>
                     <div className="grid grid-cols-3 gap-5">
-                        {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','I'].map(option => (
-                            <button
-                                key={option}
-                                className="block w-full bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"
-                                onClick={() => handleAnswerChange('question2', option)}
-                            >
-                                {option === 'A' && 'A high-powered boardroom'}
-                                {option === 'B' && 'A garden in full bloom'}
-                                {option === 'C' && 'A wide-open sky and endless ocean'}
-                                {option === 'D' && 'A dimly lit, moody art gallery'}
-                                {option === 'E' && 'A bustling marketplace full of spices'}
-                                {option === 'F' && 'A grand ballroom with chandeliers'}
-                                {option === 'G' && 'A stadium filled with cheering crowds'}
-                                {option === 'H' && 'A racetrack or energetic fitness arena'}
-                                {option === 'I' && 'Gym'}
-                            </button>
+                        {[{ char: 'A', img: img10 },
+                        { char: 'B', img: img11 },
+                        { char: 'C', img: img12 },
+                        { char: 'D', img: img13 },
+                        { char: 'E', img: img14 },
+                        { char: 'F', img: img15 },
+                        { char: 'G', img: img16 },
+                        { char: 'H', img: img17 },
+                        { char: 'I', img: img18 },
+                        ].map(option => (
+                            <div>
+                                <img src={option.img} alt="" className='' srcset="" onClick={() => handleAnswerChange('question2', option.char)} />
+                                <button
+                                    key={option.char}
+                                    className="block w-full bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"
+                                    onClick={() => handleAnswerChange('question2', option.char)}
+                                >
+                                    {option.char === 'A' && 'A high-powered boardroom'}
+                                    {option.char === 'B' && 'A garden in full bloom'}
+                                    {option.char === 'C' && 'A wide-open sky and endless ocean'}
+                                    {option.char === 'D' && 'A dimly lit, moody art gallery'}
+                                    {option.char === 'E' && 'A bustling marketplace full of spices'}
+                                    {option.char === 'F' && 'A grand ballroom with chandeliers'}
+                                    {option.char === 'G' && 'A stadium filled with cheering crowds'}
+                                    {option.char === 'H' && 'A racetrack or energetic fitness arena'}
+                                    {option.char === 'I' && 'Gym'}
+                                </button>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -135,24 +193,36 @@ const Quiz = () => {
             {/* Repeat for the next questions */}
             {answers.question3 === null && (
                 <div className="mb-6">
-                    <p className="text-lg mb-2">What’s your go-to pick-me-up activity?</p>
+                    <h1 className="text-lg mb-2">What’s your go-to pick-me-up activity?</h1>
                     <div className="grid grid-cols-3 gap-5">
-                        {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','I'].map(option => (
-                            <button
-                                key={option}
-                                className="block w-full bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"
-                                onClick={() => handleAnswerChange('question3', option)}
-                            >
-                                {option === 'A' && 'Planning for a project'}
-                                {option === 'B' && 'Writing a heartfelt note or poem'}
-                                {option === 'C' && 'Taking a stroll in nature'}
-                                {option === 'D' && 'Watching a thought-provoking movie'}
-                                {option === 'E' && 'Exploring exotic cuisines'}
-                                {option === 'F' && 'Listening to classical music'}
-                                {option === 'G' && 'Crushing a personal goal'}
-                                {option === 'H' && 'Going for a quick run or workout'}
-                                {option === 'I' && 'Going for trekking'}
-                            </button>
+                        {[{ char: 'A', img: img19 },
+                        { char: 'B', img: img20 },
+                        { char: 'C', img: img21 },
+                        { char: 'D', img: img22 },
+                        { char: 'E', img: img23 },
+                        { char: 'F', img: img24 },
+                        { char: 'G', img: img25 },
+                        { char: 'H', img: img26 },
+                        { char: 'I', img: img27 },].map(option => (
+                            <div>
+                                <img src={option.img} alt="" className='' srcset="" onClick={() => handleAnswerChange('question3', option.char)} />
+
+                                <button
+                                    key={option}
+                                    className="block w-full bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"
+                                    onClick={() => handleAnswerChange('question3', option.char)}
+                                >
+                                    {option.char === 'A' && 'Planning for a project'}
+                                    {option.char === 'B' && 'Writing a heartfelt note or poem'}
+                                    {option.char === 'C' && 'Taking a stroll in nature'}
+                                    {option.char === 'D' && 'Watching a thought-provoking movie'}
+                                    {option.char === 'E' && 'Exploring exotic cuisines'}
+                                    {option.char === 'F' && 'Listening to classical music'}
+                                    {option.char === 'G' && 'Crushing a personal goal'}
+                                    {option.char === 'H' && 'Going for a quick run or workout'}
+                                    {option.char === 'I' && 'Going for trekking'}
+                                </button>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -160,9 +230,9 @@ const Quiz = () => {
 
             {answers.question4 === null && (
                 <div className="mb-16">
-                    <p className="text-lg mb-2">What’s your ideal fragrance mood?</p>
+                    <h1 className="text-lg mb-2">What’s your ideal fragrance mood?</h1>
                     <div className="grid grid-cols-3 gap-5">
-                        {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','I'].map(option => (
+                        {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'].map(option => (
                             <button
                                 key={option}
                                 className="block w-full bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"
@@ -185,9 +255,9 @@ const Quiz = () => {
 
             {answers.question5 === null && (
                 <div className="mb-16">
-                    <p className="text-lg mb-2">What’s your ultimate life motto?</p>
+                    <h1 className="text-lg mb-2">What’s your ultimate life motto?</h1>
                     <div className="grid grid-cols-3 gap-5">
-                        {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','I'].map(option => (
+                        {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'].map(option => (
                             <button
                                 key={option}
                                 className="block w-full bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"
@@ -209,9 +279,9 @@ const Quiz = () => {
             )}
             {answers.question6 === null && (
                 <div className="mb-16">
-                    <p className="text-lg mb-2">What’s your energy level like on most days?</p>
+                    <h1 className="text-lg mb-2">What’s your energy level like on most days?</h1>
                     <div className="grid grid-cols-3 gap-5">
-                        {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H','I'].map(option => (
+                        {['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'].map(option => (
                             <button
                                 key={option}
                                 className="block w-full bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"
